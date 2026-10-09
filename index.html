@@ -1,0 +1,94 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f5f5f2">
+  <title>MonoTask | Daily Planner</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="app">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="MonoTask home">
+        <span class="brand-icon">m.</span>
+        <span>monotask</span>
+      </a>
+      <span class="status"><span></span> YOUR WORKSPACE</span>
+    </header>
+
+    <section class="intro">
+      <p class="eyebrow" id="today-date">YOUR DAILY SPACE</p>
+      <h1>Today<span class="period">.</span></h1>
+      <p class="subtitle">Make room for what matters.</p>
+    </section>
+
+    <section class="progress-section">
+      <div class="section-heading">
+        <span>Daily progress</span>
+        <span id="progress-label">0% complete</span>
+      </div>
+      <div
+        class="progress-track"
+        id="progress-track"
+        role="progressbar"
+        aria-label="Daily task completion"
+        aria-valuemin="0"
+        aria-valuemax="100"
+        aria-valuenow="0"
+      >
+        <div class="progress-fill" id="progress-fill"></div>
+      </div>
+    </section>
+
+    <section class="tasks-section">
+      <div class="section-heading tasks-heading">
+        <h2>Your tasks <span id="task-count">0</span></h2>
+        <span class="small-label">STAY FOCUSED</span>
+      </div>
+
+      <form id="task-form" class="task-form">
+        <label class="sr-only" for="task-input">New task</label>
+        <input
+          id="task-input"
+          type="text"
+          placeholder="What needs to get done?"
+          maxlength="160"
+          autocomplete="off"
+          required
+        >
+        <button type="submit" class="add-button">
+          <span>+</span> Add task
+        </button>
+      </form>
+
+      <nav class="filters" aria-label="Filter tasks">
+        <button type="button" class="filter active" data-filter="all">
+          All
+        </button>
+        <button type="button" class="filter" data-filter="active">
+          Pending
+        </button>
+        <button type="button" class="filter" data-filter="completed">
+          Completed
+        </button>
+      </nav>
+
+      <ul id="task-list" class="task-list" aria-live="polite"></ul>
+
+      <div id="empty-state" class="empty-state">
+        <span class="empty-icon">✳</span>
+        <h3>Nothing on the list.</h3>
+        <p>Add a task. Future you will appreciate it.</p>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <span>ONE THING AT A TIME.</span>
+      <span>MONOTASK © 2026</span>
+    </footer>
+  </main>
+</body>
+</html>
